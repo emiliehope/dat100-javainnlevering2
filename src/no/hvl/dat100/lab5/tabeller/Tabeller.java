@@ -3,44 +3,52 @@ package no.hvl.dat100.lab5.tabeller;
 public class Tabeller {
 
 	public static void main(String[] args) {
-		int[] tab = { 1, 2, 6, 5};
-		int[] tab1 = { 3, 4, 7, 9}; 
+		int[] tab = { 1, 2, 6, 7};
+		int[] tab1 = { 3, 4, 7, 9}; // Oppg h)
 
-		int x = 1;
+		int x = 2; //oppg d) + oppg e)
 
-		// System.out.print(tab);
+		// oppg a) skrivUt(tab);
 
-		// String tall = tilStreng(tab);
-
-		System.out.print(tilStreng(tab));
+		// oppg b) System.out.print(tilStreng(tab));
 
 		//System.out.println();
 
-		//System.out.println(summer(tab));
+		// oppg c) System.out.println(summer(tab));
 
-		/* System.out.println(finnesTall(tab, x)); 
+		// oppg d) System.out.println(finnesTall(tab, x)); 
 		
-		System.out.println(posisjonTall(tab, x)); 
+		// oppg e) System.out.println(posisjonTall(tab, x)); 
 		
 		
-		for (int i: reverser(tab)) {
+		/* oppg f) 
+		 
+		 for (int i: reverser(tab)) {
 			System.out.print(i+ ", "); 
 		} 
+		*/
 		
-		System.out.print(erSortert(tab)); */
 		
-		/* for (int i: settSammen(tab, tab1)) {
-			 System.out.print(i + " "); 
-		} */
+		// oppg g) System.out.print(erSortert(tab)); 
+		
+		
+		/* oppg h)
+		 
+		 for (int i: settSammen(tab, tab1)) {
+		 
+			 System.out.print(i + ", "); 
+		} 
+		*/ 
 
 	} 
 
+	
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		for (int i = 1; i < tabell.length; i++) {
+		for (int i = 0; i < tabell.length; i++) {
 
-			System.out.println(tabell[i]);
+			System.out.print(tabell[i] + ", ");
 
 		}
 
@@ -67,15 +75,15 @@ public class Tabeller {
 	// c)
 	public static int summer(int[] tabell) {
 
-		/*
-		 * int sum = 0;
-		 * 
-		 * for (int i = 0; i < tabell.length; i++) {
-		 * 
-		 * sum +=tabell[i];
-		 * 
-		 * 
-		 * } return sum;
+		
+		 /* int sum = 0;
+		  
+		 for (int i = 0; i < tabell.length; i++) {
+		 
+		 sum +=tabell[i];
+		 
+		 
+		  } return sum;
 		 */
 
 		
@@ -87,7 +95,7 @@ public class Tabeller {
 		 } return sum;
 	}
 
-		/* int sum = 0;
+	/* int sum = 0;
 		int i = 0;
 
 		while (i < tabell.length) {
@@ -98,6 +106,7 @@ public class Tabeller {
 		return sum; 
 	} */
 
+	
 	// d)
 
 	public static boolean finnesTall(int[] tabell, int tall) {
@@ -116,6 +125,7 @@ public class Tabeller {
 
 	}
 
+	
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
 
@@ -129,6 +139,7 @@ public class Tabeller {
 		return a;
 	}
 
+	
 	// f)
 	public static int[] reverser(int[] tabell) {
 		
@@ -143,6 +154,7 @@ public class Tabeller {
 
 	}
 
+	
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
@@ -154,6 +166,7 @@ public class Tabeller {
 		return true; 
 	} 
 
+	
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
