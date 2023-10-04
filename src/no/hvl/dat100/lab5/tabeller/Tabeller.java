@@ -3,25 +3,37 @@ package no.hvl.dat100.lab5.tabeller;
 public class Tabeller {
 
 	public static void main(String[] args) {
-		int[] tab = { 1, 2, 3, 6 };
+		int[] tab = { 1, 2, 6, 5};
+		int[] tab1 = { 3, 4, 7, 9}; 
 
 		int x = 1;
 
-		/* System.out.print(tab);
+		// System.out.print(tab);
 
-		String tall = tilStreng(tab);
+		// String tall = tilStreng(tab);
 
-		System.out.print(tall);
+		System.out.print(tilStreng(tab));
 
-		System.out.println();
+		//System.out.println();
 
-		System.out.println(summer(tab));
+		//System.out.println(summer(tab));
 
-		System.out.println(finnesTall(tab, x)); */
+		/* System.out.println(finnesTall(tab, x)); 
 		
 		System.out.println(posisjonTall(tab, x)); 
+		
+		
+		for (int i: reverser(tab)) {
+			System.out.print(i+ ", "); 
+		} 
+		
+		System.out.print(erSortert(tab)); */
+		
+		/* for (int i: settSammen(tab, tab1)) {
+			 System.out.print(i + " "); 
+		} */
 
-	}
+	} 
 
 	// a)
 	public static void skrivUt(int[] tabell) {
@@ -39,11 +51,16 @@ public class Tabeller {
 
 		String tab = "[";
 
-		for (int a : tabell) {
-			tab += a + ",";
+		for (int i = 0; i < tabell.length; i++) {
+			tab += tabell[i]; 
+			
+			if (i < tabell.length -1) {
+				tab += ","; 
+			}
+		
 		}
-
-		return tab + "]";
+		tab += "]"; 
+		return tab;  
 
 	}
 
@@ -61,16 +78,16 @@ public class Tabeller {
 		 * } return sum;
 		 */
 
-		/*
-		 * int sum = 0;
-		 * 
-		 * for (int i : tabell) { //her er i både plassen og elementet i tabellen sum
-		 * +=i;
-		 * 
-		 * } return sum;
-		 */
+		
+		 int sum = 0;
+		 
+		 for (int i : tabell) { //her er i både plassen og elementet i tabellen
+		 sum+=i;
+		 
+		 } return sum;
+	}
 
-		int sum = 0;
+		/* int sum = 0;
 		int i = 0;
 
 		while (i < tabell.length) {
@@ -78,8 +95,8 @@ public class Tabeller {
 			i++;
 
 		}
-		return sum;
-	}
+		return sum; 
+	} */
 
 	// d)
 
@@ -114,23 +131,42 @@ public class Tabeller {
 
 	// f)
 	public static int[] reverser(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+		
+		int[] reversertabell = new int [tabell.length]; 
+				
+		for (int i = 0; i < tabell.length; i++) {
+		
+			reversertabell[i] = tabell[tabell.length -1 -i]; 
+			
+		}
+	return reversertabell; 
 
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
-	}
+		
+		for (int i = 0; i < tabell.length-1; i++) {
+			if (tabell[i] > tabell[i+1]) 
+				return false; 
+		}
+		return true; 
+	} 
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
+		int[] nytab = new int [tabell1.length + tabell2.length]; 
+		for (int i = 0; i < tabell1.length; i++) {
+			nytab[i] = tabell1[i]; 
+		}
+		int n = 0; 
+		
+		for (int i = tabell1.length; i < nytab.length; i++) {
+			nytab[i] = tabell2[n]; 
+			n += 1; 
+		}
+		return nytab; 
 	}
 }
